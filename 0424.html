@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的介紹網站</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Noto Sans TC", Arial, sans-serif;
+    background: 
+        linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+        url("20260411_112027.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    color: white;
+    padding: 30px;
+    text-align: center;
+    text-shadow: 10px 10px 19px rgba(0,0,0,0.25);
+}
+
+/* 導覽列 */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+    background-color: rgba(255,255,255,0);
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.7);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    color: #000000;
+    text-decoration: none;
+}
+
+/* 主版面 */
+#wrap {
+    display: flex;
+    max-width: 1000px;
+    margin: 30px auto;
+    gap: 20px;
+    padding: 0 15px;
+}
+
+main { flex: 3; }
+aside { flex: 1; }
+
+/* 卡片 */
+.card {
+    background: white;
+    background: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.73));
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== 遊戲區 ===== */
+#log {
+    display: block;
+    margin: 10px auto;
+    text-align: left;
+    width: 90%;
+    height: 250px;
+    background: #111;
+    color: #0f0;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* 按鈕置中 */
+.btn-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background: #ecaf4f;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* 禁用 */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+ .card {
+            background: white;
+            background: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.73));
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            border-left: 5px solid #4facfe;
+            padding-left: 10px;
+            
+        }
+
+        /* 側欄 */
+    aside nav {
+            display: flex;
+            justify-content: left;
+            background: white;
+            background: linear-gradient(rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.73));
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            
+        }
+
+    aside h2 {
+            color: #7c5d48;
+            border: none;
+            flex-direction: column;
+            
+        }
+
+    aside ul {
+            display: flex;
+            flex-wrap: wrap;      /* 超過會自動換行 */
+            gap: 10px;            /* 間距 */
+            padding-left: 0;
+            list-style: none;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+        }
+
+    aside ul li {
+            flex-wrap: wrap; 
+            background: #eef2f3;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+    aside ul h3 {
+            background: #d9d8d4;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+    footer {
+            text-align: left;
+            background-color: #222;
+            color: #aaa;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+    html {
+            scroll-behavior: smooth;
+        }
+
+/* RWD */
+@media (max-width: 800px) {
+    #wrap {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>我的個人網站</h1>
+    <p>作品集 + 小遊戲</p>
+</header>
+
+<nav>
+<ul>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#game">GAME</a></li>
+</ul>
+</nav>
+
+<div id="wrap">
+
+<main>
+
+<div id="about" class="card">
+    <h2>關於我</h2>
+    <p>你好！我是高中生，對程式設計與互動網頁很有興趣。</p>
+</div>
+
+<div id="skills" class="card">
+    <h2>技能</h2>
+    <ul>
+        <li>HTML / CSS</li>
+        <li>JavaScript</li>
+        <li>C++</li>
+    </ul>
+</div>
+
+<!-- 🎮 終極密碼 -->
+<div id="game" class="card">
+    <h2>終極密碼（0 ~ 100）</h2>
+
+    <textarea id="log" disabled></textarea>
+
+    <div class="btn-group">
+        <button id="restart">開始新局</button>
+        <button id="guess" disabled>猜數字</button>
+        <button id="robot" disabled>🤖 機器人解題</button>
+    </div>
+</div>
+
+</main>
+
+ <aside>
+        <nav>
+            <h2>我的最愛</h2>
+            <ul>
+                <li>⭐ 水豚</li>
+                <li>🎨 插畫</li>
+                <li>🎮 貪食蛇</li>
+                <li>🍜 拉麵</li>
+            </ul>
+        </nav>
+
+        <nav>
+            <h2>目前狀態</h2>
+            <ul>
+                <h3>學習：</h3>
+                <li>Flexbox</li>
+                <h3>心情：</h3>
+                <li>☕ 咖啡中</li>
+                <h3>金句：</h3>
+                <li>程式碼是我的畫筆</li>
+            </ul>
+        </nav>
+    </aside>
+
+</div>
+
+<script>
+$(function(){
+
+let answer;
+let playing = false;
+let finished = true;
+let count = 0;
+let round = 0;
+let total = 0;
+
+function log(msg){
+    $("#log").val($("#log").val() + msg);
+    $("#log").scrollTop($("#log")[0].scrollHeight);
+}
+
+/* ===== 開始新局 ===== */
+$("#restart").click(function(){
+
+    if(playing && !finished){
+        alert("⚠️ 這一局還沒結束！");
+        return;
+    }
+
+    answer = Math.floor(Math.random()*100);
+    playing = true;
+    finished = false;
+    count = 0;
+    round++;
+
+    log("\n=== 第 " + round + " 局 ===\n");
+
+    $("#guess").prop("disabled", false);
+    $("#robot").prop("disabled", false);
+});
+
+/* ===== 玩家猜 ===== */
+$("#guess").click(function(){
+
+    if(!playing) return;
+
+    let g = prompt("輸入 0 ~ 1000");
+    if(g === null || g === "") return;
+
+    g = Number(g);
+    count++; total++;
+
+    let result = g > answer ? "太大" : g < answer ? "太小" : "答對";
+
+    log(`你猜 ${g} → ${result}\n`);
+
+    if(result === "答對"){
+        let avg = (total / round).toFixed(2);
+        log(`🎉 共 ${count} 次 | 平均 ${avg} 次\n`);
+
+        playing = false;
+        finished = true;
+
+        $("#guess").prop("disabled", true);
+        $("#robot").prop("disabled", true);
+    }
+});
+
+/* ===== 機器人 ===== */
+$("#robot").click(function(){
+
+    if(!playing) return;
+
+    let low = 0, high = 1000;
+
+    while(true){
+        let mid = Math.floor((low + high) / 2);
+        count++; total++;
+
+        let result;
+
+        if(mid > answer){
+            result = "太大";
+            high = mid;
+        } else if(mid < answer){
+            result = "太小";
+            low = mid;
+        } else {
+            result = "答對";
+        }
+
+        log(`🤖 ${mid} → ${result}\n`);
+
+        if(result === "答對"){
+            let avg = (total / round).toFixed(2);
+            log(`🤖 完成！共 ${count} 次 | 平均 ${avg} 次\n`);
+
+            playing = false;
+            finished = true;
+
+            $("#guess").prop("disabled", true);
+            $("#robot").prop("disabled", true);
+
+            break;
+        }
+    }
+});
+
+});
+</script>
+
+</body>
+</html>
